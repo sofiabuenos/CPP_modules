@@ -1,20 +1,22 @@
-NAME = phonebook
+NAME = PhoneBook
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = phonebook.cpp
+INC = phonebook.hpp
+
+SRC = phonebook.cpp definitions.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) -I $(INC) -o $(NAME) $(OBJ)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
 
 clean:
 	rm -fr $(OBJ)
