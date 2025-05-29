@@ -4,19 +4,19 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-INC = phonebook.hpp
+#INC = phonebook.hpp contact.hpp header.hpp
 
-SRC = phonebook.cpp definitions.cpp
+SRC = phonebook.cpp contact.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -I $(INC) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -fr $(OBJ)
