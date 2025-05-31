@@ -13,7 +13,7 @@ class PhoneBook
 		~PhoneBook();
 		//void printContacts();
 		int getSize();
-		//void showList();
+		bool showContact();
 		void search();
 		void addContact();
 };

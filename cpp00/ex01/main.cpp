@@ -41,8 +41,10 @@ int	main(void)
 	std:: string command;
 
 	print_header();
-	while (std::cin >> command)
+	while (std::getline(std::cin, command))
 	{
+		if (std::cin.eof())
+			exit(0);
 		if (command == "EXIT")
 			break ;
 		else if (command == "ADD" || command == "add")
@@ -50,7 +52,8 @@ int	main(void)
 		else if (command == "SEARCH")
 			phonebook.search();
 		else
-			std::cout << "Invalid command. Try ADD, SEARCH, or EXIT." << std::endl;
+			std::cout << "Invalid command. Try ADD, SEARCH, or EXIT: ";
+		std::cin.clear();
 	}
 	return (0);
 }

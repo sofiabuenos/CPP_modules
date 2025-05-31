@@ -8,4 +8,6 @@
 # include "phonebook.hpp"
 # include "contact.hpp"
 
+std::string truncate(const std::string& str);
+
 #endif
