@@ -74,7 +74,7 @@ void	PhoneBook::addContact()
 	std::cout << std::endl << "Let's a new contact to your phonebook..." << std::endl << std::endl;
 	if (get_info(firstName, lastName, nickname, phoneNumber, darkestSecret))
 	{
-		std::cout << "Invalid input detected. Please re-enter the command ADD to try again." << std::endl;
+		std::cout << "Invalid input detected. Please re-enter the command ADD to try again: ";
 		return;
 	}
 	contacts[index].setInfo(firstName, lastName, nickname, phoneNumber, darkestSecret);
@@ -91,7 +91,7 @@ std::string truncate(const std::string& str)
 	return str;
 }
 
-bool	PhoneBook::showContact()
+bool PhoneBook::showContact()
 {
 	int	index;
 	std::string input;
@@ -99,13 +99,19 @@ bool	PhoneBook::showContact()
 	std::getline(std::cin, input);
 	input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
 	if (input == "NO")
+	{
+		std::cout << "Enter a new command. Try ADD, SEARCH, or EXIT: ";
 		return false;
+	}
 	if (input.length() > 1 || !isdigit(input[0]) || std::stoi(input) < 1 || std::stoi(input) > 8)
+	{
+		std::cout << "Invalid index. Enter SEARCH to try again: " ;
 		return false;
+	}
 	index = std::stoi(input) - 1;
 	if (index >= contactCount)
 	{
-		std::cout << "No contact found at index " << input << "." << std::endl;
+		std::cout << std::endl << "No contact found at index" << input << "." << " Enter another command or SEARCH to try again: ";
 		return false;
 	}
 	this->contacts[index].printInfo();
@@ -116,7 +122,7 @@ void	PhoneBook::search()
 {
 	if (contactCount == 0)
 	{
-		std::cout << "No contacts available." << std::endl << "Enter ADD to add a contact: ";
+		std::cout << std::endl << "No contacts available yet. Enter ADD to a contact: ";
 		return;
 	}
 	std::cout << std::endl;
@@ -135,8 +141,7 @@ void	PhoneBook::search()
 	}
 	if (!showContact())
 		return ;
-	// MENSAGEM PARA VOLTAR PARA MENU
-	return ;
+	std::cout << std::endl << "Enter a new command: ";
 }
 
 

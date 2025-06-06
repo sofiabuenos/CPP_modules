@@ -19,7 +19,7 @@ void Contact::printInfo(void)
 	<< std::setw(10) << std::right << truncate(getLastName()) << " | "
 	<< std::setw(10) << std::right << truncate(getNickname()) << " | "
 	<< std::setw(10) << std::right << truncate(getPhoneNumber()) << " | "
-	<< std::setw(10) << std::right << truncate(getDarkestSecret()) << " | " << std::endl;
+	<< std::setw(10) << std::right << truncate(getDarkestSecret()) << std::endl;
 }
 
 void Contact::setInfo(const std::string firstName, const std::string lastName, const std::string nickname,
