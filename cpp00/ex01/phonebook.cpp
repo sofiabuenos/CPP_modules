@@ -122,7 +122,7 @@ void	PhoneBook::search()
 {
 	if (contactCount == 0)
 	{
-		std::cout << std::endl << "No contacts available yet. Enter ADD to a contact: ";
+		std::cout << std::endl << "No contacts available yet. Enter ADD to add your first contact: ";
 		return;
 	}
 	std::cout << std::endl;
