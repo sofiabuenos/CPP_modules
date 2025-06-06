@@ -6,7 +6,7 @@
 class PhoneBook
 {
 	private:
-		std::array<Contact, 8> contacts;
+		Contact contacts[8];
 		int contactCount;
 	public:
 		PhoneBook();
