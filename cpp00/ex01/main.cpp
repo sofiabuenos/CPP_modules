@@ -18,7 +18,7 @@ int	main(void)
 	while (std::getline(std::cin, command))
 	{
 		if (std::cin.eof())
-			exit(0);
+			return (0);
 		if (command == "EXIT" || command == "exit")
 			break ;
 		else if (command == "ADD" || command == "add")

@@ -9,21 +9,11 @@ int	PhoneBook::getSize(void)
 	return contactCount;
 }
 
-bool isNumber(const std::string &phoneNumber)
-{
-	if (phoneNumber.length() != 9)
-		return false;
-	for (size_t i = 0; i < phoneNumber.length(); i++)
-	{
-		if (!std::isdigit(phoneNumber[i]))
-			return false;
-	}
-	return true;
-}
+
 
 bool	validInput(std::string &info, int isNum)
 {
-	info.erase(std::remove(info.begin(), info.end(), '\n'), info.end());
+	trim(info);
 	if (info.empty())
 	{
 		std::cout << "Input cannot be empty." << std::endl;
@@ -84,12 +74,6 @@ void	PhoneBook::addContact()
 	std::cout << std::endl << "Enter new command: ";
 }
 
-std::string truncate(const std::string& str)
-{
-	if (str.length() > 10)
-		return str.substr(0, 9) + ".";
-	return str;
-}
 
 bool PhoneBook::showContact()
 {
@@ -97,18 +81,18 @@ bool PhoneBook::showContact()
 	std::string input;
 	std::cout << std::endl << "Would you like to view details of a specific contact? Enter the contact's index or type NO to return to the main menu: ";
 	std::getline(std::cin, input);
-	input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
+	trim(input);
 	if (input == "NO")
 	{
 		std::cout << "Enter a new command. Try ADD, SEARCH, or EXIT: ";
 		return false;
 	}
-	if (input.length() > 1 || !isdigit(input[0]) || std::stoi(input) < 1 || std::stoi(input) > 8)
+	if (input.length() > 1 || !isdigit(input[0]) || atoi(input) < 1 || atoi(input) > 8)
 	{
 		std::cout << "Invalid index. Enter SEARCH to try again: " ;
 		return false;
 	}
-	index = std::stoi(input) - 1;
+	index = atoi(input) - 1;
 	if (index >= contactCount)
 	{
 		std::cout << std::endl << "No contact found at index" << input << "." << " Enter another command or SEARCH to try again: ";

@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #INC = phonebook.hpp contact.hpp header.hpp
 
-SRC = phonebook.cpp contact.cpp main.cpp
+SRC = phonebook.cpp contact.cpp main.cpp utils.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
