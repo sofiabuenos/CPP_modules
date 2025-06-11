@@ -9,8 +9,8 @@ Zombie* zombieHorde( int N, std::string name )
 	{
 		std::cout << "Memory allocation issue" << std::endl;
 		return (NULL);
-		return horde;
 	}
 	for (int i = 0; i < N; i++)
 		horde[i].setName(name);
+	return (horde);
 }
