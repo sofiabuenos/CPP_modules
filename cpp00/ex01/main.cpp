@@ -3,11 +3,23 @@
 
 void	print_header(void)
 {
-	std::cout << "*********************************************" << std::endl;
-	std::cout << "*          Welcome back to the 80s          *" << std::endl;
-	std::cout << "*********************************************" << std::endl << std::endl;
-	std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "██████╗  ██╗  ██╗ ██████╗ ███╗   ██╗███████╗██████╗  ██████╗  ██████╗ ██╗  ██╗\n";
+	std::cout << "██╔══██╗ ██║  ██║██╔═══██╗████╗  ██║██╔════╝██╔══██╗██╔═══██╗██╔═══██╗██║ ██╔╝\n";
+	std::cout << "██████╔╝ ███████║██║   ██║██╔██╗ ██║█████╗  ██████╔╝██║   ██║██║   ██║█████╔╝ \n";
+	std::cout << "██╔═══╝  ██╔══██║██║   ██║██║╚██╗██║██╔══╝  ██╔══██ ██║   ██║██║   ██║██╔═██╗ \n";
+	std::cout << "██║      ██║  ██║╚██████╔╝██║ ╚████║███████╗██████╔╝╚██████╔╝╚██████╔╝██║  ██╗\n";
+	std::cout << "╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝\n";
+	std::cout << std::endl;
+	std::cout << "                            p h o n e b o o k                              \n";
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "Your contacts will be securely stored while the program is running.\n";
+	std::cout << "Ready to go! Please enter a command: ADD, SEARCH, or EXIT: ";
+
 }
+
 
 int	main(void)
 {
@@ -15,18 +27,24 @@ int	main(void)
 	std:: string command;
 
 	print_header();
-	while (std::getline(std::cin, command))
+	while (1)
 	{
-		if (std::cin.eof())
-			return (0);
+		if (!std::getline(std::cin, command))
+		{
+			if (std::cin.eof())
+				break ;
+		}
 		if (command == "EXIT" || command == "exit")
-			break ;
+			return (0);
 		else if (command == "ADD" || command == "add")
 			phonebook.addContact();
 		else if (command == "SEARCH" || command == "search")
 			phonebook.search();
 		else
-			std::cout << "Invalid command. Try ADD, SEARCH, or EXIT: ";
+		{
+			std::cout << BOLD_RED <<  "Invalid command" << RESET << std::endl;
+			std::cout << "Try ADD, SEARCH, or EXIT:";
+		}
 		std::cin.clear();
 	}
 	return (0);

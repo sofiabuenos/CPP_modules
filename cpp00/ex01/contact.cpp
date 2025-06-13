@@ -19,7 +19,7 @@ void Contact::printInfo(void)
 	<< std::setw(10) << std::right << truncate(getLastName()) << " | "
 	<< std::setw(10) << std::right << truncate(getNickname()) << " | "
 	<< std::setw(10) << std::right << truncate(getPhoneNumber()) << " | "
-	<< std::setw(10) << std::right << truncate(getDarkestSecret()) << std::endl;
+	<< std::setw(10) << std::right << getDarkestSecret() << std::endl;
 }
 
 void Contact::setInfo(const std::string firstName, const std::string lastName, const std::string nickname,
@@ -31,7 +31,6 @@ void Contact::setInfo(const std::string firstName, const std::string lastName, c
 	cPhoneNumber = phoneNumber;
 	cDarkestSecret = darkestSecret;
 
-	std::cout << std::endl << "Your contact has been successfully added!" << std::endl;
 	std::cout << std::endl;
 	Contact::printInfo();
 }

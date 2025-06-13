@@ -11,7 +11,6 @@ class PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-		//void printContacts();
 		int getSize();
 		bool showContact();
 		void search();
