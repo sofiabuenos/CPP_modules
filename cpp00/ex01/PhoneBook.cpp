@@ -12,7 +12,7 @@ PhoneBook::~PhoneBook()
 	std::cout << std::endl;
 	std::cout << BOLD_WHITE << "Closing your Phonbook..." << RESET << std::endl;
 	std::cout << BOLD_WHITE << "Your contacts will be gone forever!" << RESET << std::endl;
-	std::cout << BOLD_WHITE << "Goodbye 👋🏻" << RESET << std::endl;
+	std::cout << BOLD_WHITE << "Goodbye 😭" << RESET << std::endl;
 	std::cout << std::endl;
 }
 
@@ -123,7 +123,7 @@ bool PhoneBook::showContact()
 	index = atoi(input) - 1;
 	if (index >= contactCount)
 	{
-		std::cout << std::endl << "No contact found at index" << input << "." << " Enter another command or SEARCH to try again: ";
+		std::cout << std::endl << BOLD_RED << "No contact found at index " << input << "." << RESET <<  " Enter another command or SEARCH to try again: ";
 		return false;
 	}
 	this->contacts[index].printInfo();
