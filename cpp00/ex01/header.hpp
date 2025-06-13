@@ -6,8 +6,8 @@
 # include <iomanip>
 # include <csignal>
 # include <cstdlib>
-# include "phonebook.hpp"
-# include "contact.hpp"
+# include "PhoneBook.hpp"
+# include "Contact.hpp"
 
 # define RESET   "\033[0m"
 # define BLACK   "\033[30m"
