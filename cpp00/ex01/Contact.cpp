@@ -7,19 +7,14 @@ Contact::~Contact() {}
 void Contact::printInfo(void)
 {
 	std::cout << std::endl;
-	std::cout << "--------------------------------------------------------------------" << std::endl;
-	std::cout << std::setw(10) << std::right << "FIRST NAME" << " | "
-	<< std::setw(10) << std::right << "LAST NAME" << " | "
-	<< std::setw(10) << std::right << "NICKNAME" << " | "
-	<< std::setw(10) << std::right << "PHONE NUM" << " | "
-	<< std::setw(10) << std::right << "DARKEST SECRET" << std::endl;
-	std::cout << "--------------------------------------------------------------------" << std::endl;
-
-	std::cout << std::setw(10) << std::right << truncate(getFirstName()) << " | "
-	<< std::setw(10) << std::right << truncate(getLastName()) << " | "
-	<< std::setw(10) << std::right << truncate(getNickname()) << " | "
-	<< std::setw(10) << std::right << truncate(getPhoneNumber()) << " | "
-	<< std::setw(10) << std::right << getDarkestSecret() << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
+	std::cout << std::setw(10) << BOLD_CYAN << "FIRST NAME: " << RESET << truncate(getFirstName()) << std::endl;
+	std::cout << std::setw(10) << BOLD_CYAN << "LAST NAME: " << RESET << truncate(getLastName()) << std::endl;
+	std::cout << std::setw(10) << BOLD_CYAN << "NICKNAME: " << RESET << truncate(getNickname()) << std::endl;
+	std::cout << std::setw(10) << BOLD_CYAN << "PHONE NUM: " << RESET << truncate(getPhoneNumber()) << std::endl;
+	std::cout << std::setw(10) << BOLD_CYAN << "DARKEST SECRET: " << RESET << getDarkestSecret() << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
+	std::cout << std::endl;
 }
 
 void Contact::setInfo(const std::string firstName, const std::string lastName, const std::string nickname,

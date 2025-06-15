@@ -18,7 +18,7 @@ int	main(int ac, char** av)
 
 	if (checks)
 		return (1);
-	std::ifstream file(av[1]);
-	if(!file.is_open())
-
+	// std::ifstream file(av[1]);
+	// if(!file.is_open())
+	return (0);
 }

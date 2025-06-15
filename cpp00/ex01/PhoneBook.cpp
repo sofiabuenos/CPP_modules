@@ -9,8 +9,8 @@ PhoneBook::PhoneBook(): contactCount(0)
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << std::endl;
-	std::cout << BOLD_WHITE << "Closing your Phonbook..." << RESET << std::endl;
+	std::cout << std::endl << std::endl;
+	std::cout << BOLD_WHITE << "Closing your Phonebook..." << RESET << std::endl;
 	std::cout << BOLD_WHITE << "Your contacts will be gone forever!" << RESET << std::endl;
 	std::cout << BOLD_WHITE << "Goodbye 😭" << RESET << std::endl;
 	std::cout << std::endl;
@@ -90,7 +90,7 @@ void PhoneBook::addContact()
 	}
 	else if (ret == -1)
 	{
-		std::cout << std::endl;
+		std::cout << std::endl << BOLD_WHITE << "Goodbye!" << RESET << std::endl;
 		exit (0);
 	}
 	contacts[index].setInfo(firstName, lastName, nickname, phoneNumber, darkestSecret);
@@ -138,17 +138,17 @@ void	PhoneBook::search()
 		return;
 	}
 	std::cout << std::endl << CYAN << "Listing all your contacts..." << RESET << std::endl;
-	std::cout << "-------------------------------------------------------------" << std::endl;
-	std::cout << std::setw(10) << std::right << "INDEX" << " | "
-	<< std::setw(10) << std::right << "FIRST NAME" << " | "
-	<< std::setw(10) << std::right << "LAST NAME" << " | "
+	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << std::setw(10) << std::right << "INDEX" << "|"
+	<< std::setw(10) << std::right << "FIRST NAME" << "|"
+	<< std::setw(10) << std::right << "LAST NAME" << "|"
 	<< std::setw(10) << std::right << "NICKNAME" << std::endl;
-	std::cout << "-------------------------------------------------------------" << std::endl;
+	std::cout << "-------------------------------------------" << std::endl;
 	for (int i = 0; i < getSize(); i++)
 	{
-		std::cout << std::setw(10) << std::right << i + 1 << " | "
-			<< std::setw(10) << std::right << truncate(contacts[i].getFirstName()) << " | "
-			<< std::setw(10) << std::right << truncate(contacts[i].getLastName()) << " | "
+		std::cout << std::setw(10) << std::right << i + 1 << "|"
+			<< std::setw(10) << std::right << truncate(contacts[i].getFirstName()) << "|"
+			<< std::setw(10) << std::right << truncate(contacts[i].getLastName()) << "|"
 			<< std::setw(10) << std::right << truncate(contacts[i].getNickname()) << std::endl;
 	}
 	if (!showContact())
