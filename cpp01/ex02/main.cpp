@@ -1,6 +1,19 @@
 #include <iostream>
 #include <string>
 
+/*
+ * In C++, both references and pointers are used to refer to other variables, but they have key differences:
+ *
+ * - A pointer is a variable that holds the memory address of another variable. 
+ *   Pointers can be reassigned to point to different variables and can be null
+ *   Example: std::string* ptr = &greeting;
+ *
+ * - A reference is an alias for another variable - they share the same memory address.
+ *   Once initialized, a reference cannot be changed to refer to another variable and cannot be null.
+ *   Example: std::string& ref = greeting;
+ */
+
+
 int	main(void)
 {
 	std::string greeting = "HI THIS IS BRAIN";

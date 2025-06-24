@@ -2,19 +2,19 @@
 # define SEDALT_HPP
 
 # include <iostream>
+# include <fstream>
 
 class SedAlt
 {
 	private:
-		std::string fileName;
-		std::string string1;
-		std::string string2;
+		std::ifstream inFile;
+		std::ofstream outFile;
 	public:
 		SedAlt();
-		SedAlt(std::string fileName, std::string S1, std::string S2);
 		~SedAlt();
-		std::string* Replace(std::string str);
-
+		bool openInFile(std::string fileName);
+		bool openOutFile(std::string fileName);
+		void replace(char** av);
 };
 
 #endif
