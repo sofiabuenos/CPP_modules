@@ -13,9 +13,10 @@ Fixed::Fixed() : _nbr(0)
  *    Example:
  *    Fixed a;
  *    Fixed b = a; Copy constructor is called here.
+ *    Fixed c(a);  Copy constructor is called here too.
  *
  * - The 'this' pointer refers to the current object being constructed.
- * - Using '*this = src;' invokes the assignment operator to copy all member variables
+ * - Using '*this = src;' INVOKES THE ASSIGNMENT OPERATOR to copy all member variables
  *   from 'src' to the current object.
  * - This ensures that the new object is an exact copy of 'src'.
  */
