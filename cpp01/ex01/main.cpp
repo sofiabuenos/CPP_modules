@@ -13,7 +13,7 @@
 
 int	main(void)
 {
-	int hordeSize = 5;
+	int hordeSize = 4;
 	Zombie* horde = zombieHorde(hordeSize, "Rotter");
 	for (int i = 0; i < hordeSize; ++i)
 		horde[i].announce();

@@ -13,8 +13,10 @@
 
 int	main(void)
 {
+	std::cout << BOLD_WHITE << "Brain eater allocated on the heap:" << RESET << std::endl;
 	Zombie *zombie = newZombie("Foo");
 	zombie->announce();
+	std::cout << BOLD_WHITE << "Brain eater allocated on the stack:" << RESET  << std::endl;
 	randomChump("Rob");
 	delete zombie;
 	return (1);

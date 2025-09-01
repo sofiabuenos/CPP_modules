@@ -2,12 +2,12 @@
 
 Zombie::Zombie(std::string name):_name(name)
 {
-	std::cout << "Zombie " << _name << " successfully created" << std::endl;
+	std::cout << BOLD_CYAN << "Zombie " << _name << " successfully created" << RESET << std::endl;
 }
 
 Zombie::~Zombie()
 {
-	std::cout << "Zombie " << _name << " successfully destroyed" << std::endl;
+	std::cout << BOLD_MAGENTA<< "Zombie " << _name << " successfully destroyed" << RESET << std::endl;
 }
 
 void Zombie::announce(void)
