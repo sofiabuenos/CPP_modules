@@ -25,3 +25,9 @@ void Weapon::setType(std::string type)
 {
 	this->type = type;
 } 
+
+std::ostream& operator<<(std::ostream& os, const Weapon& weapon)
+{
+	os << weapon.getType();
+	return (os);
+}

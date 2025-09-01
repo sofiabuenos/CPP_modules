@@ -17,7 +17,5 @@ public:
 	void setType(std::string type);
 };
 
-
-
-
+std::ostream& operator<<(std::ostream& os, const Weapon& weapon);
 #endif

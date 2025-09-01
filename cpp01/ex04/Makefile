@@ -1,4 +1,4 @@
-NAME = notLosers
+NAME = ex04
 
 CC = c++
 

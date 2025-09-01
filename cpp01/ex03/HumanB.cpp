@@ -20,8 +20,8 @@ void HumanB::setWeapon(Weapon& weapon)
 void HumanB::attack()
 {
 	if (!weapon)
-		std::cout << this->name << " ** claims for mercy **" << std::endl;
+		std::cout << BOLD_MAGENTA << this->name << " ** claims for mercy **" << RESET << std::endl;
 	else
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+		std::cout << BOLD_GREEN <<this->name << " attacks with their " << this->weapon->getType() << RESET << std::endl;
 	return ;
 }

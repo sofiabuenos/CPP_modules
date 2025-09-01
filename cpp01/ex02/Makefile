@@ -1,4 +1,4 @@
-NAME = ptrVSref
+NAME = ex02
 
 CC = c++
 

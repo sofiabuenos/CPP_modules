@@ -1,4 +1,4 @@
-NAME = Brainz
+NAME = ex00
 
 CC = c++
 

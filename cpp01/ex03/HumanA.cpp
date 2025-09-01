@@ -13,6 +13,6 @@ HumanA::~HumanA()
 
 void HumanA::attack()
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	std::cout << BOLD_CYAN << this->name << " attacks with their " << this->weapon.getType() << RESET<< std::endl;
 	return ;
 }

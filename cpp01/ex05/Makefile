@@ -1,4 +1,4 @@
-NAME = Harl
+NAME = ex05
 
 CC = c++
 
